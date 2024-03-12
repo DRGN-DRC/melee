@@ -31,8 +31,8 @@ typedef struct _ftSeakAttributes { // x2D4 (fp->dat_attrs)
     float x24;
     float x28;
     float self_vel_y;
-    s32 x30;
-    s32 x34;
+    f32 x30;
+    f32 x34;
     s32 x38;
     s32 x3C;
     s32 x40;

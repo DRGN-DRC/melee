@@ -1,10 +1,15 @@
 #include "ft/forward.h"
 #include "ftSeak/forward.h"
 
+#include "ftSeak/ftSk_SpecialHi.h"
+
 #include "ef/eflib.h"
 #include "ef/efsync.h"
 #include "ft/fighter.h"
+#include "ft/ft_081B.h"
 #include "ft/ft_0877.h"
+#include "ft/ftcliffcommon.h"
+#include "ft/ftcommon.h"
 #include "ft/inlines.h"
 #include "ft/types.h"
 #include "it/items/itseakvanish.h"
@@ -106,40 +111,157 @@ void ftSk_SpecialAirHi_Enter(HSD_GObj* gobj)
 }
 
 // 801131D0 - 8011320C (0x3C bytes)
+void ftSk_SpecialAirHiStart_0_Anim(HSD_GObj* gobj)
+{
+    if (ftAnim_IsFramesRemaining((Fighter_GObj*) gobj) == 0) {
+        ftSk_SpecialHi_80113A30(gobj);
+    }
+}
 
 // 8011320C - 80113210 (0x4 bytes)
+void ftSk_SpecialHiStart_0_IASA(HSD_GObj* gobj)
+{
+    return;
+}
 
 // Interrupt_SheikUpBStartAir
 // 80113210 - 80113214 (0x4 bytes)
+void ftSk_SpecialAirHiStart_0_IASA(HSD_GObj* gobj)
+{
+    return;
+}
 
 // 80113214 - 80113234 (0x20 bytes)
+void ftSk_SpecialHiStart_0_Phys(HSD_GObj* gobj)
+{
+    ft_80084F3C((Fighter_GObj*) gobj);
+}
 
 // 80113234 - 80113278 (0x44 bytes)
+// https://decomp.me/scratch/HpXlE
+void ftSk_SpecialAirHiStart_0_Phys(HSD_GObj* gobj)
+{
+    Fighter* fp;
+    ftSeakAttributes* attr;
+    f32 unused[4];
+
+    fp = gobj->user_data;
+    attr = fp->dat_attrs;
+    ftCommon_8007D494((Fighter*) fp, attr->x30, attr->x34);
+    ftCommon_8007D268((Fighter*) fp);
+}
 
 // 80113278 - 801132B4 (0x3C bytes)
+void ftSk_SpecialHiStart_0_Coll(HSD_GObj* gobj)
+{
+    if (ft_80082708((Fighter_GObj*) gobj) == GA_Ground) {
+        ftSk_SpecialHi_80113324(gobj);
+    }
+}
 
 // 801132B4 - 80113324 (0x70 bytes)
+// https://decomp.me/scratch/C7jWu
+void ftSk_SpecialAirHiStart_0_Coll(HSD_GObj* gobj)
+{
+    Fighter* fp = GET_FIGHTER(gobj);
+    s32 direction; // r4
+    s32 groundOrLedge;
+
+    if (fp->facing_dir < ftSk_Init_804D9660) {
+        direction = -1;
+    } else {
+        direction = 1;
+    }
+
+    groundOrLedge = ft_CheckGroundAndLedge((Fighter_GObj*) gobj, direction);
+
+    if (groundOrLedge != 0) {
+        ftSk_SpecialHi_80113390(gobj);
+    } else if (ftCliffCommon_80081298((Fighter_GObj*) gobj) == 0) {
+        return;
+    }
+}
 
 // 80113324 - 80113390 (0x6C bytes)
+void ftSk_SpecialHi_80113324(Fighter_GObj* gobj)
+{
+    Fighter* fp;
+
+    fp = gobj->user_data;
+    ftCommon_8007D60C(fp);
+    Fighter_ChangeMotionState(gobj, 0x166, 0x0C4C508EU, fp->cur_anim_frame,
+                              ftSk_Init_804D9664, ftSk_Init_804D9660, NULL);
+    fp->accessory4_cb = fn_80112ED8;
+}
 
 // 80113390 - 801133FC (0x6C bytes)
+void ftSk_SpecialHi_80113390(Fighter_GObj* gobj)
+{
+    Fighter* fp;
+
+    fp = gobj->user_data;
+    ftCommon_8007D7FC(fp);
+    Fighter_ChangeMotionState(gobj, 0x163, 0x0C4C508EU, fp->cur_anim_frame,
+                              ftSk_Init_804D9664, ftSk_Init_804D9660, NULL);
+    fp->accessory4_cb = fn_80112ED8;
+}
 
 // 801133FC - 80113438 (0x3C bytes)
+// https://decomp.me/scratch/6l76B
+void ftSk_SpecialHiStart_1_Anim(HSD_GObj* gobj)
+{
+    Fighter* fp;
+
+    fp = gobj->user_data;
+    fp->mv.sk.specialn.x0 -= 1;
+
+    if (0 >= fp->mv.sk.specialn.x0) {
+        ftSk_SpecialHi_80113EAC(gobj);
+    }
+}
 
 // Animation_SheikUpBTravel
 // 80113438 - 80113474 (0x3C bytes)
+void ftSk_SpecialAirHiStart_1_Anim(HSD_GObj* gobj)
+{
+    Fighter* fp;
+
+    fp = gobj->user_data;
+    fp->mv.sk.specialn.x0 -= 1;
+
+    if (0 >= fp->mv.sk.specialn.x0) {
+        ftSk_SpecialHi_80113F68(gobj);
+    }
+}
 
 // 80113474 - 80113478 (0x4 bytes)
+void ftSk_SpecialHiStart_1_IASA(HSD_GObj* gobj)
+{
+    return;
+}
 
 // Interrupt_SheikUpBTravelAir
 // 80113478 - 8011347C (0x4 bytes)
+void ftSk_SpecialAirHiStart_1_IASA(HSD_GObj* gobj)
+{
+    return;
+}
 
 // Physics_SheikUpBTravelAir
 // 8011347C - 8011349C (0x20 bytes)
+void ftSk_SpecialHiStart_1_Phys(HSD_GObj* gobj)
+{
+    ftCommon_8007CB74((Fighter_GObj*) gobj);
+}
 
 // 8011349C - 801134A0 (0x4 bytes)
+void ftSk_SpecialAirHiStart_1_Phys(HSD_GObj* gobj)
+{
+    return;
+}
 
 // 801134A0 - 80113540 (0xA0 bytes)
+// https://decomp.me/scratch/dULMS
 
 // 80113540 - 8011374C (0x20C bytes)
 
