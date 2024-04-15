@@ -22,7 +22,6 @@
 /* 28FE90 */ void it_8028FE90(Item_GObj*);
 /* 290938 */ HSD_GObj* it_80290938(HSD_JObj*);
 /* 291BE0 */ HSD_GObj* it_80291BE0(Vec3*);
-/* 292D48 */ HSD_GObj* it_80292D48(Vec3*);
 /* 294DC0 */ HSD_GObj* it_80294DC0(Vec3*);
 /* 294E78 */ void it_80294E78(Item_GObj*, float);
 /* 294EB0 */ void it_80294EB0(Item_GObj*, Vec3*, Vec3*);
@@ -170,14 +169,13 @@
 /* 2C837C */ HSD_GObj* it_802C837C(Item_GObj*, Vec3*, enum_t, u32, float);
 /* 2C8B28 */ HSD_GObj* it_802C8B28(Item_GObj*, Vec3*, u32, float);
 /* 2C8C34 */ void it_802C8C34(Item_GObj*);
-/* 2D09D0 */ void it_802D09D0(Item_GObj*);
 /* 2D8618 */ void it_802D8618(s32, Vec3*, s32, s32);
 /* 2E5F8C */ s32 it_802E5F8C(Item_GObj*, Vec3*, s32, bool, float, float);
 /* 2F0340 */ u32 it_802F0340(Item_GObj*, Vec3*, Vec3*, u32, u32, float);
 /* 2F046C */ void it_802F046C(s32);
 /* 2F0AE0 */ void it_802F0AE0(Item_GObj* fighter_gobj, Vec3*, Vec3*, enum_t,
                               bool, float facing_dir, float, float);
-/* 2F2094 */ s32 it_802F2094(s32, Vec3*, s32, s32);
+/* 2F2094 */ Item_GObj* it_802F2094(int, Vec3*, int, int);
 /* 2F3330 */ bool it_802F3330(Item_GObj*);
 /* 2F3374 */ void it_802F3374(Item_GObj*, Item_GObj*);
 /* 3F94A0 */ extern ItemStateTable it_803F94A0[];

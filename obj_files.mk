@@ -586,7 +586,7 @@ TEXT_O_FILES +=\
     $(BUILD_DIR)/asm/melee/it/items/itsscope.s.o\
     $(BUILD_DIR)/asm/melee/it/items/itstarrod.s.o\
     $(BUILD_DIR)/asm/melee/it/items/itharisen.s.o\
-    $(BUILD_DIR)/asm/melee/it/items/itfflower.s.o\
+    $(BUILD_DIR)/src/melee/it/items/itfflower.c.o\
     $(BUILD_DIR)/asm/melee/it/items/itkinoko.s.o\
     $(BUILD_DIR)/asm/melee/it/items/itdkinoko.s.o\
     $(BUILD_DIR)/src/melee/it/items/ithammer.c.o\
@@ -688,7 +688,7 @@ TEXT_O_FILES +=\
     $(BUILD_DIR)/src/melee/it/items/itraikou.c.o\
     $(BUILD_DIR)/src/melee/it/items/itsuikun.c.o\
     $(BUILD_DIR)/asm/melee/it/items/itkireihana.s.o\
-    $(BUILD_DIR)/asm/melee/it/items/itmarumine.s.o\
+    $(BUILD_DIR)/src/melee/it/items/itmarumine.c.o\
     $(BUILD_DIR)/asm/melee/it/items/itlugia.s.o\
     $(BUILD_DIR)/asm/melee/it/items/ithouou.s.o\
     $(BUILD_DIR)/src/melee/it/items/itmetamon.c.o\

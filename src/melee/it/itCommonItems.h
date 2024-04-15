@@ -7,6 +7,7 @@
 #include <baselib/forward.h>
 
 #include <placeholder.h>
+#include <dolphin/mtx/types.h>
 
 typedef struct {
     bool x0;
@@ -171,6 +172,7 @@ typedef struct itPokemonAttributes {
 typedef struct {
     u8 padding[0xE34 - 0xDD4];
     s32 timer;
+    int x64;
 } ItPokemonVars;
 
 typedef struct {
@@ -184,5 +186,56 @@ typedef struct MewVars {
     f32 x8;
     f32 xC;
 } MewVars;
+
+typedef struct itCoinAttributes {
+    f32 x0;
+    f32 x4;
+    f32 x8;
+    f32 xC;
+    f32 x10;
+    f32 x14;
+    f32 x18;
+    f32 x1C;
+    f32 x20;
+    f32 x24;
+    f32 x28;
+    f32 x2C;
+    f32 x30;
+    f32 x34;
+    f32 x38;
+    f32 x3C;
+    f32 x40;
+    f32 x44;
+    f32 x48;
+} itCoinAttributes;
+
+typedef struct CoinVars {
+    int x0;
+    int x4;
+    f32 x8;
+    f32 xC;
+    int x10;
+    int x14;
+} CoinVars;
+
+typedef struct FFlowerVars {
+    int x0;
+    uint x4;
+} FFlowerVars;
+
+typedef struct HassamVars {
+    f32 x0;
+    f32 x4;
+    f32 x8;
+    f32 xC;
+    f32 x10;
+    f32 x14;
+    s32 x18;
+    s32 x1C;
+    s32 x20;
+    u8 padding[0x5C - 0x20];
+    Vec3 x5C;
+    f32 x68;
+} HassamVars;
 
 #endif

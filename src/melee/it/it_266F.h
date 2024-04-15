@@ -17,12 +17,13 @@
 /* 26D62C */ void it_8026D62C(Item_GObj*, HSD_GObjEvent);
 /* 26D9A0 */ bool it_8026D9A0(Item_GObj*);
 /* 26DA08 */ bool it_8026DA08(Item_GObj*);
-/* 26DF34 */ s32 it_8026DF34(void);
+/* 26DF34 */ bool it_8026DF34(void);
 /* 26DFB0 */ bool it_8026DFB0(void);
 /* 26E0F4 */ void it_8026E0F4(Item_GObj*);
 /* 26E15C */ void it_8026E15C(Item_GObj*, HSD_GObjEvent);
 /* 26E248 */ void it_8026E248(Item_GObj*, HSD_GObjEvent);
 /* 26E414 */ void it_8026E414(Item_GObj*, HSD_GObjEvent);
+/* 26E71C */ void it_8026E71C(Item_GObj*, HSD_GObjEvent);
 /* 26E8C4 */ void it_8026E8C4(Item_GObj*, HSD_GObjEvent, HSD_GObjEvent);
 /* 26E9A4 */ bool it_8026E9A4(Item_GObj*, Vec3*, Vec3*, int);
 /* 26EECC */ void it_8026EECC(HSD_GObj*, int);
